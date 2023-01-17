@@ -1,0 +1,25 @@
+@mixin modal {
+    width: 300px;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin modal-input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
