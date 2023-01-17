@@ -8,7 +8,6 @@ const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify-es').default;
 
-
 function browserSync () {
     browsersync.init({
         server:{
@@ -53,14 +52,14 @@ function js () {
     .pipe(browsersync.stream())
 }
 
-const build = gulp.series(cleanDist, js, css, html)
-const watch = gulp.parallel(build,watchFiles, browserSync);
+const build = gulp.series(html, cleanDist, html, js, css)
+const watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.html = html;
 exports.js = js;
+exports.css = css;
+exports.cleanDist = cleanDist
+exports.build = build;
 exports.watch = watch;
 exports.default = watch;
-exports.build = build;
-exports.html = html;
-exports.cleanDist = cleanDist;
-exports.css = css;
 
